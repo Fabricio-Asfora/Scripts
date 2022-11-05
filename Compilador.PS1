@@ -36,5 +36,4 @@ function Compile-File($diretorio, $saida){
     Remove-Item arq.txt
 }
 
-Compile-File prog++ teste.exe
 # new-alias cf Compile-File
