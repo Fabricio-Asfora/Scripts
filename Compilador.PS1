@@ -1,17 +1,11 @@
-
-# compile-java
-
-
 function Compile-File($diretorio, $saida){
-    # $compiler = @{c = gcc; cpp = g++}
     $arquivos = Get-ChildItem $diretorio -File | where-object Name -Like "*.c*" | Select-Object Name
 
     $names = $arquivos.Name
     $initial = ".\$diretorio\"
-    $string_arquivos = ""
 
     foreach ($currentItemName in $names) {
-        $final = $initial+$currentItemName >> arq.txt
+        $initial+$currentItemName >> arq.txt
     }
 
     $end = Get-Content arq.txt
@@ -43,7 +37,4 @@ function Compile-File($diretorio, $saida){
 }
 
 Compile-File prog++ teste.exe
-
-# .\Executor.PS1
-
 # new-alias cf Compile-File
